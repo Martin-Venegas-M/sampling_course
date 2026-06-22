@@ -50,3 +50,6 @@ rsconnect/
 
 # .sav original file
 *.sav
+
+# mac
+.DS_Store
