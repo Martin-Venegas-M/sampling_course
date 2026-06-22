@@ -1,10 +1,9 @@
 #******************************************************************************
 # 0. Identification -----------------------------------------------------------
-# Title: Faculty Salaries - Assignment 1
+# Title: Faculty Salaries - Quiz 1
 # Institution: Sampling Course
 # Responsable: MVM
-# Executive Summary: This script loads and explores the Faculty Salaries
-#   dataset (PNR_PeerAssess_Mod2_FacultySalaries) for assignment 1
+# Executive Summary: This script contains the answers for Quiz 1
 # Date: June 13, 2026
 #******************************************************************************
 
