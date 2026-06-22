@@ -63,7 +63,7 @@ var_srs_new # 0.00952381
 
 # 5. Compute a projected design effect using roh from problem 3 above.
 
-deff_new = 1 + (b_new - 1) * roh
+deff_new <- 1 + (b_new - 1) * roh
 deff_new # 1.525
 
 # 6. Compute a projected sampling variance of the mean for the characteristic
