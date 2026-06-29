@@ -1,0 +1,58 @@
+---
+title: "Untitled"
+format: html
+---
+
+# Assignment
+
+The table of credit card transactions contains 150 card transactions, each showing an ID and the transaction amount. A systematic sample of n = 20 transactions are to be selected for an audit of the transaction payment by customers.  
+
+```{r}
+N <- 150
+n <- 20
+k <- N / n
+```
+
+# Steps to follow
+
+Select the sample using the fractional interval method in which the decimal fraction is included in the selection process.  
+
+- Give the sampling fraction $k = N / n$ and choose a random number from the accompanying table of random numbers to use as a random start specifying in the solution how the random start was chosen. (Hint: Recall in the fractional interval method the sampling interval has a decimal portion, and that decimal part is used in “counting.” For example, if there were $N = 200$ transactions and $n = 30$ were to be selected, the systematic sampling interval would be $k = 200/30 = 6.67$ (rounding the ‘decimal’ part to two digits). Then find a random number from 001 to 667 from a table of random digits and ‘insert’ a decimal point after the first digit. Say, for instance, the random number is 145. The random start is 1.45. Then starting with this random start, list the ‘selections’ by adding the interval $k = 6.67$ to each successive selection: $1.45, 1.45 + 6.67 = 8.12, 8.12 + 6.67 = 14.79, 14.79 + 6.67 = 21.46$, and so on. Stop this addition once the selection number is 201 (one more than N) or greater. Go back to each ‘selection’ (the underlined numbers) and drop the decimals: 1.45 becomes 1, 8.12 becomes 8, 14.79 becomes 14, 21.46 becomes 21, and so on. 1, 8, 14, 21, and so on are the systematic selections to be taken from the list of N = 200 transactions.)
+- Record the sample case (sequential number), the selection (the random start plus intervals), and the transaction amount for each sample selection.
+- Calculate the mean transaction amount from the sample.
+
+# How to submit
+
+The format of your work must adhere to the following guidelines. In the first prompt, you will submit the following values, by copy/pasting this structure:
+
+1. The systematic sampling interval $k = N / n$ is …
+
+2. The random start (a two-digit random number from 01 to 75 selected from a table of random numbers) is …
+
+```{r}
+rn <- 5.7
+```
+
+3. The selection number (the random start plus the interval, including decimal value) for each of the 20 systematically selected cases, sorted in order of selection is …
+
+```{r}
+selection <- purrr::map(
+    1:20,
+    \(x) rn + ((x - 1) * k)
+) |>
+    unlist()
+
+selection
+selection |> floor()
+```
+
+4. The sequence number (the selection number truncated to remove the decimal portion) and the transaction number of each of the 20 systematically selected elements in the sample is ... 
+
+Note: You may want to assemble your submission in a word doc or other text editor before pasting in into the browser and submitting. 
+
+# Answer
+
+1. The systematic sampling interval is k = 150 / 20 = 7.5
+2. The random start is 57. I selected this from the first column and first row (random number 57992) and just keeping the first two digits. When inserting the decimal is 5.7.
+3. The original selection numbers are: 5.7, 13.2, 20.7, 28.2, 35.7, 43.2, 50.7, 58.2, 65.7, 73.2, 80.7, 88.2, 95.7, 103.2, 110.7, 118.2, 125.7, 133.2, 140.7, 148.2.
+4. The selection numbers are: 5, 13, 20, 28, 35, 43, 50, 58, 65, 73, 80, 88, 95, 103, 110, 118, 125, 133, 140, 148. And the corresponding transaction numbers for this selections are: 32016172018522, 32016172018530, 32016172018537, 32016172018545, 32016172018552, 32016172018560, 32016172018567, 32016172018575, 32016172018582, 32016172018590, 32016172018597, 32016172018605, 32016172018612, 32016172018620, 32016172018627, 32016172018635, 32016172018642, 32016172018650, 32016172018657, 32016172018665.
